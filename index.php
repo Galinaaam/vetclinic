@@ -1,43 +1,12 @@
+<?php require_once ("./classes/autoload.php");?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>Dogsvet</title>
-	<!--js files-->
-	<script src="./libs/bootstrap3/js/jquery-3.2.1.min.js"></script>
-	<script src="./libs/bootstrap3/js/bootstrap.min.js"></script>
-	<!--css files-->
-	<link rel="stylesheet" href="./libs/bootstrap3/css/bootstrap.css"/>
-	<link rel="stylesheet" href="./css/main.css"/>
-    <link href="./libs/lightbox/css/lightbox.css" rel="stylesheet">
-
-
+    <title>Dogsvet</title>
+    <?php Template_class::getLibs(); ?>
 </head>
 <body>
-<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="logo">
-      <img src="img/doglogo.jpg">
-    </div>
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span> 
-      </button>
-    </div>
-    <div class="collapse navbar-collapse navbar-right" id="myNavbar">
-      <ul class="nav navbar-nav">
-          <li><a href="index.html">Sākums</a></li>
-          <li><a href="galerija.html">Galerija</a></li>
-          <li><a href="pakalpojumi.html">Pakalpojumi</a></li>
-          <li><a href="Kontakti.html">Kontakti</a></li>
-
-      </ul>
-    </div>
-  </div>
-</nav>
-
+    <?php Template_class::getNav(); ?>
 <div class="container-fluid main-container">
     <div class="row">
         <div class="main">
@@ -70,5 +39,7 @@
 </div>
 </div>
 <script src="./libs/lightbox/js/lightbox.js"></script>
+
+</div>
 </body>
 </html>
