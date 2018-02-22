@@ -41,28 +41,41 @@
                                     <form action="kontakti.php" method="post">
                                         <div class="form-group"><br><br><br>
                                             <p>Jautājumu gadījumā nosūtiet mums ziņu, aizpildot kontaktformu:</p><br><br>
-                                            <label for="category_name">Vārds:</label>
-                                            <input type="text" class="form-control"  placeholder="Vārds" name="vards">
+                                            <label for="1">Vārds:</label>
+                                            <input id="1" type="text" class="form-control"  placeholder="Vārds" name="vards">
                                         </div>
                                         <div class="form-group">
-                                            <label for="category_name">E-pasts:</label>
-                                            <input type="text" class="form-control" placeholder="E-pasts" name="epasts">
+                                            <label for="2">E-pasts:</label>
+                                            <input id="2" type="text" class="form-control" placeholder="E-pasts" name="epasts">
                                         </div>
                                         <div class="form-group">
-                                            <label for="category_name">Tālrunis:</label>
-                                            <input type="text" class="form-control" placeholder="Tālrunis" name="telefons">
+                                            <label for="3">Tālrunis:</label>
+                                            <input id="3" type="text" class="form-control" placeholder="Tālrunis" name="telefons">
                                         </div>
-
                                         <div class="form-group">
-                                            <label for="category_name">Ziņa:</label><br>
-                                            <textarea name="field_3" id="m2542_field_3" data-required="true" placeholder=""></textarea>
+                                            <label for="4">Ziņa:</label><br>
+                                            <textarea id="4" name="zina"></textarea>
                                         </div>
                                         <button type="submit" class="btn btn-primary" name="sutit">Nosūtīt</button>
                                     </form>
                                     <?php
-                                        if(isset($_POST['sutit'])){
-                                            $db->saveMessge($_POST['fctg'],$_POST['xdffy']);
+                                        if(isset($_POST['sutit'])) {
+                                            $validate->isEmpty($_POST['vards'],"Lūdzu ierakstiet vārdu<br>");
+                                            $validate->isEmpty($_POST['epasts'],"Lūdzu ierakstiet e-pastu<br>");
+                                            $validate->isEmpty($_POST['telefons'],"Lūdzu ierakstiet telefonu<br>");
+                                            $validate->isEmpty($_POST['zina'],"Lūdzu ierakstiet ziņu<br>");
+
+                                            if($validate->getErrorStatus ()==0){
+                                                echo 'Dati saglabāti';
+
+                                                $db->saveMessge($_POST['vards'],$_POST['epasts'],$_POST['telefons'],$_POST['zina']);
+                                            }
+                                            else{
+                                              // echo 'Lūdzu aizpildiet visus laukus!';
+                                            }
+
                                         }
+
                                     ?>
                                 </div>
                                 <div class="leftaside col-md-2"></div>

@@ -16,6 +16,7 @@
             <div  align="center">
                 <div class="col-sm-2"></div>
                 <div class="col-sm-8">
+                    <h1>DogsVET</h1>
                         <a href="img/a.jpg" data-lightbox="roadtrip"><img src="img/a.jpg" alt="" class="img-responsive col-md-3 col-xs-12 col-sm-6 img-circle"></a>
                         <a href="img/b.jpg" data-lightbox="roadtrip"><img src="img/b.jpg" alt="" class="img-responsive col-md-3 col-xs-12 col-sm-6 img-circle"></a>
                         <a href="img/e.jpg" data-lightbox="roadtrip"><img src="img/e.jpg" alt="" class="img-responsive col-md-3 col-xs-12 col-sm-6 img-circle"></a>

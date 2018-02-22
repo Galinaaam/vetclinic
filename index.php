@@ -5,15 +5,17 @@
     <title>Dogsvet</title>
     <?php Template_class::getLibs(); ?>
 </head>
+
 <body>
     <?php Template_class::getNav(); ?>
+
 <div class="container-fluid main-container">
     <div class="row">
         <div class="main">
         <div  align="center">
         <div class="col-sm-2"></div>
         <div class="col-sm-8">
-
+            <h1>DogsVET</h1>
             <img src="img/d.jpg" class="img-responsive img-circle"/>
             <h1>Par mums</h1>
             <p> Par mums

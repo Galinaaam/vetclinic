@@ -30,6 +30,7 @@ class Template_class{
           <li><a href="galerija.php">Galerija</a></li>
           <li><a href="pakalpojumi.php">Pakalpojumi</a></li>
           <li><a href="kontakti.php">Kontakti</a></li>
+          <li><a href="lietotaji.php">Lietotāji</a></li>
       </ul>
     </div>
   </div>
