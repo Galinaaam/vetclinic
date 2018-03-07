@@ -11,6 +11,30 @@ class Template_class{
 	<link rel="stylesheet" href="./css/main.css"/>
     <link href="./libs/lightbox/css/lightbox.css" rel="stylesheet">';
     }
+
+    static function getmenu(){
+
+if(!isset($_SESSION['nick'])){
+    echo '<li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Profils<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="./registracija.php">Reģistrēties</a></li>  
+                    </ul>
+                </li>';
+}
+else{
+    echo '<li><a href="./registracija.php">'.$_SESSION['username'].'</a></li>
+     <li><form method="post"><button class="btn btn-primary" name="i">Iziet</button></form></li>';
+    if(isset($_POST['i'])){
+        session_destroy();
+        header('location:index.php');
+    }
+    if($_SESSION['role']==4){
+        echo '<li><a href="./Lietotaji.php">Lietotāji</a></li>';
+    }
+}
+    }
+
     static function getNav(){
         echo '<nav class="navbar navbar-inverse">
   <div class="container-fluid">
@@ -30,10 +54,20 @@ class Template_class{
           <li><a href="galerija.php">Galerija</a></li>
           <li><a href="pakalpojumi.php">Pakalpojumi</a></li>
           <li><a href="kontakti.php">Kontakti</a></li>
-          <li><a href="lietotaji.php">Lietotāji</a></li>
+          <li><a href="registracija.php">Registracija</a></li>
+           <li><a href="Lietotaji.php">Lietotaji</a></li>
       </ul>
     </div>
   </div>
 </nav>';
     }
+
+    static function getAdminMenu(){
+        echo '        
+        <ul>
+            <li><a href="./registracija.php">Kategorijas pievienošana</a></li>
+            <li><a href="./Lietotaji.php">Visas kategorijas</a></li>
+        </ul>';
+    }
 }
+?>

@@ -12,4 +12,10 @@ class Validation_class{
     function getErrorStatus(){
         return $this->errorStatus;
     }
+
+    static function showErrors(){
+        error_reporting(E_ALL);
+        ini_set('display_errors', 1);
+    }
+
 }
