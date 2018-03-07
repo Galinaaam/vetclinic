@@ -12,7 +12,7 @@
         <div class="main">
             <div  align="center">
                 <div class="col-sm-2"></div>
-                <div class="col-sm-8"> <h1>Dogs VET</h1>
+                <div class="col-sm-8"> <h1>Dogs VET </h1>
                     <div class="col-sm-2"></div>
                     <div class="navbar-header">
                         <li><a href="Lietotaji.php">Lietotaji</a></li>
