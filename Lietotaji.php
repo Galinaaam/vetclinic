@@ -12,6 +12,7 @@
         <div class="main">
             <div  align="center">
                 <div class="col-sm-2"></div>
+                <?php Template_class::getAdminMenu(); ?>
                 <div class="col-sm-8"> <h1>Dogs VET </h1>
                     <div class="col-sm-2"></div>
                     <div class="navbar-header">

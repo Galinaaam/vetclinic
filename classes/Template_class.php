@@ -54,20 +54,15 @@ else{
           <li><a href="galerija.php">Galerija</a></li>
           <li><a href="pakalpojumi.php">Pakalpojumi</a></li>
           <li><a href="kontakti.php">Kontakti</a></li>
-          <li><a href="registracija.php">Registracija</a></li>
            <li><a href="Lietotaji.php">Lietotaji</a></li>
-      </ul>
+      </ul> 
+       <ul>
+            <li><a href="./registracija.php">Pieslēgties</a></li>
+             <li><a href="./registracija.php">Reģistrēties</a></li>
+       </ul>
     </div>
   </div>
 </nav>';
-    }
-
-    static function getAdminMenu(){
-        echo '        
-        <ul>
-            <li><a href="./registracija.php">Kategorijas pievienošana</a></li>
-            <li><a href="./Lietotaji.php">Visas kategorijas</a></li>
-        </ul>';
     }
 }
 ?>
