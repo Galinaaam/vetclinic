@@ -57,11 +57,28 @@ else{
            <li><a href="Lietotaji.php">Lietotaji</a></li>
       </ul> 
        <ul>
-            <li><a href="./registracija.php">Pieslēgties</a></li>
+            <li><a href="">Azmirsi paroli?</a></li>
              <li><a href="./registracija.php">Reģistrēties</a></li>
        </ul>
     </div>
-  </div>
+     <form action="index.php" method="post">
+      <div class="login"  >        
+                        <div class="form-group">
+                            <label for="5">Parole:</label>
+                            <input id="5" type="text" class="form-control"   name="parole">
+                        </div>
+                        <div class="form-group">
+                            <label for="6">Epasts:</label>
+                            <input id="6" type="text" class="form-control"  name="epasts">
+                        </div>
+                        <div>
+                            <button type="submit" class="btn btn-primary" name="sutit">Ienākt</button>
+                        </div> 
+       </div>
+                    </form>
+                    
+ 
+   </div>  
 </nav>';
     }
 }

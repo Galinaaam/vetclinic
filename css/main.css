@@ -5,6 +5,18 @@
 html, body, .box, .main {
   height: 100%; }
 
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  clear: inherit; }
+
+.login {
+  width: 110px;
+  height: 90px;
+  padding: 20px;
+  float: right; }
+
 body {
   background-color: #9999e6; }
   body .menu {
