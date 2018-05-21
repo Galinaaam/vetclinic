@@ -11,15 +11,9 @@ ul {
   padding: 0;
   clear: inherit;
 }
-.login {
-  width: 110px;
-  height: 90px;
-  padding:20px;
+.float{
   float: right;
-
 }
-
-
 body{
   background-color: #9999e6;
   .menu{
@@ -29,6 +23,16 @@ body{
     margin: 0;
   }
 
+}
+.aut{
+  color:#9d9d9d;
+}
+.reg{
+  float:right;
+  margin: 8px;
+}
+.btn{
+  margin:10px;
 }
 
 .menu li{
