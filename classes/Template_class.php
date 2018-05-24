@@ -38,8 +38,8 @@ class Template_class{
     static function getNav(){
         echo '<nav class="navbar navbar-inverse">
               <div class="container-fluid">
-                <div class="logo">
-                  <img src="img/doglogo.jpg">
+                <div class="logo1">
+                  <img src="img/logo.png" class="logo">
                 </div>
                 <div class="navbar-header">
                   <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -49,17 +49,24 @@ class Template_class{
                   </button>
                 </div>
                 <div class="collapse navbar-collapse navbar-right" id="myNavbar">
-                  <ul class="nav navbar-nav">
+                  <ul class="nav navbar-nav text">
                       <li><a href="index.php">Sākums</a></li>
                       <li><a href="galerija.php">Galerija</a></li>
                       <li><a href="pakalpojumi.php">Pakalpojumi</a></li>
                       <li><a href="kontakti.php">Kontakti</a></li>
                        <li><a href="Lietotaji.php">Lietotaji</a></li>
                   </ul> 
-                  
-                </div>
-               </div>
-               <div>
+                   <form class="navbar-form navbar-left" action="/action_page.php">
+                       <div class="input-group">
+                         <input type="text" class="form-control" placeholder="Meklēt">
+                       <div class="input-group-btn">
+                       <button class="btn btn-default" type="submit">
+                          <i class="glyphicon glyphicon-search"></i>
+                       </button>
+                       </div>
+                       </div>
+                    </form>
+                 
                  <form action="index.php" method="post" class="navbar-form navbar-right">
                         <div class="form-group aut">
                             <label for="6">Epasts:</label>
@@ -69,16 +76,20 @@ class Template_class{
                             <label for="5">Parole:</label>
                             <input id="5" type="text" class="form-control"   name="parole">
                         </div>
+                        
+                        
+                         
                         <div>
-                            <button type="submit" class="btn" name="sutit">Ienākt</button>
-                        </div>
-                         <div class="reg">
-                             <a href="">Azmirsi paroli?</a>
-                         </div>
-                         <div class="reg">
+                            <button type="submit" class="btnien btn" name="sutit">Ienākt</button>
+                        </div> 
+                        <div class="regbut">
                              <a href="./registracija.php">Reģistrēties</a>
-                         </div>
+                        </div>
+                        <div class="regbut">
+                             <a href="">Azmirsi paroli?</a>
+                        </div>
                  </form> 
+               
               </div>
             </nav>';
     }

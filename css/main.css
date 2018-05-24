@@ -17,6 +17,7 @@ ul {
 body {
   background-color: #9999e6; }
   body .menu {
+    font-family: Helvetica, Arial, sans-serif;
     height: 100px;
     text-align: center;
     background-size: cover;
@@ -26,11 +27,15 @@ body {
   color: #9d9d9d; }
 
 .reg {
-  float: right;
+  float: bottom;
   margin: 8px; }
 
 .btn {
-  margin: 10px; }
+  margin: 0px;
+  float: right; }
+
+.btnien {
+  margin-top: 10px; }
 
 .menu li {
   display: inline;
@@ -39,7 +44,7 @@ body {
   top: 40px; }
 
 .menu li a {
-  font-family: 'Vollkorn SC', serif;
+  font-family: Helvetica, Arial, sans-serif;
   font-size: 25px;
   font-weight: bold; }
 
@@ -47,8 +52,18 @@ body {
   text-decoration: underline; }
 
 .main {
-  font-family: 'Vollkorn SC', serif;
+  font-family: Helvetica, Arial, sans-serif;
   font-size: 16px;
   font-weight: bold; }
+
+.logo {
+  max-width: 245px; }
+
+.logo1 {
+  float: left; }
+
+.regbut {
+  float: bottom;
+  margin: 3px; }
 
 /*# sourceMappingURL=main.css.map */
