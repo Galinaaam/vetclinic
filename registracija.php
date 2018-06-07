@@ -18,24 +18,25 @@
                     <form action="registracija.php" method="post">
                         <div class="form-group">
                             <label for="5">Epasts:</label>
-                            <input id="5" type="text" class="form-control"   name="epasts">
+                            <input id="5" type="email" class="form-control"   name="epasts" value="<?php echo @$_POST['epasts']; ?>">
                         </div>
                         <div class="form-group">
                             <label for="6">Parole:</label>
-                            <input id="6" type="text" class="form-control"  name="parole">
+                            <input id="6" type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" class="form-control"  name="parole" value="<?php echo @$_POST['parole']; ?>" title="
+Vismaz 8 rakstzīmes, kurās ir vismaz viens skaitlis un rakstzīmes no augšējā un apakšējā burta">
                         </div>
                         <div class="form-group">
                             <label for="7">Vārds:</label>
-                            <input id="7" type="text" class="form-control"  name="vards">
+                            <input id="7" type="text" class="form-control" class="letters" name="vards" value="<?php echo @$_POST['vards']; ?>">
                         </div>
                         <div class="form-group">
                             <label for="7">Uzvārds:</label>
-                            <input id="7" type="text" class="form-control"  name="uzvards">
+                            <input id="7" type="text" class="form-control" class="letters" name="uzvards" value="<?php echo @$_POST['uzvards']; ?>">
 
                         </div>
                         <div class="form-group">
                             <label for="8">Telefons:</label>
-                            <input id="8" type="text" class="form-control"  name="telefons">
+                            <input id="8" type="tel" pattern="(\+?\d[- .]*){7,13}" title="Starptautiskais, valsts vai vietējais tālruņa numurs" class="form-control"  name="telefons" value="<?php echo @$_POST['telefons']; ?>">
                         </div>
                         <div>
                             <button type="submit" class="btn btn-primary" name="sutit">Nosūtīt</button>
@@ -50,6 +51,7 @@
                         $validate->isEmpty($_POST['telefons'],"Lūdzu ierakstiet telefonu<br>");
 
                         if($validate->getErrorStatus ()==0){
+                            $db->password = password_hash($_POST['password'],PASSWORD_DEFAULT);
 
                             echo 'Dati saglabāti';
 

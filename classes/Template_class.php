@@ -39,7 +39,7 @@ class Template_class{
         echo '<nav class="navbar navbar-inverse">
               <div class="container-fluid">
                 <div class="logo1">
-                  <img src="img/logo.png" class="logo">
+                  <img src="img/Logo.png" class="logo">
                 </div>
                 <div class="navbar-header">
                   <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -74,11 +74,8 @@ class Template_class{
                         </div>
                         <div class="form-group aut"> 
                             <label for="5">Parole:</label>
-                            <input id="5" type="text" class="form-control"   name="parole">
+                            <input id="5" type="password" class="form-control"  name="parole" >
                         </div>
-                        
-                        
-                         
                         <div>
                             <button type="submit" class="btnien btn" name="sutit">Ienākt</button>
                         </div> 
@@ -88,8 +85,8 @@ class Template_class{
                         <div class="regbut">
                              <a href="">Azmirsi paroli?</a>
                         </div>
-                 </form> 
-               
+                        </form> 
+             
               </div>
             </nav>';
     }
