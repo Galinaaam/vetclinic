@@ -68,23 +68,16 @@ class Template_class{
                     </form>
                  
                  <form action="index.php" method="post" class="navbar-form navbar-right">
-                        <div class="form-group aut">
-                            <label for="6">Epasts:</label>
-                            <input id="6" type="text" class="form-control"  name="epasts">
+                        <div class="regbut">
+                             <a href="./login.php">Pieslegties</a>
                         </div>
-                        <div class="form-group aut"> 
-                            <label for="5">Parole:</label>
-                            <input id="5" type="password" class="form-control"  name="parole" >
+                         <div class="regbut">
+                             <a href="../resetpass.php">Azmirsi paroli?</a>
                         </div>
-                        <div>
-                            <button type="submit" class="btnien btn" name="sutit">Ienākt</button>
-                        </div> 
                         <div class="regbut">
                              <a href="./registracija.php">Reģistrēties</a>
                         </div>
-                        <div class="regbut">
-                             <a href="">Azmirsi paroli?</a>
-                        </div>
+                       
                         </form> 
              
               </div>

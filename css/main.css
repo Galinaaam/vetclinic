@@ -23,8 +23,10 @@ body {
     background-size: cover;
     margin: 0; }
 
-.aut {
-  color: #9d9d9d; }
+.auto {
+  color: #111111;
+  float: none;
+}
 
 .reg {
   float: bottom;
