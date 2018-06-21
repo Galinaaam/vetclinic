@@ -7,6 +7,7 @@
 </head>
 <body>
   <?php Template_class::getNav(); ?>
+
     <div class="container-fluid main-container">
         <div class="row">
             <div class="main">
@@ -71,7 +72,7 @@
                                                 $db->saveMessge($_POST['vards'],$_POST['epasts'],$_POST['telefons'],$_POST['zina']);
                                             }
                                             else{
-                                              // echo 'Lūdzu aizpildiet visus laukus!';
+                                               echo 'Lūdzu aizpildiet visus laukus!';
                                             }
 
                                         }

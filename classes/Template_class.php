@@ -1,7 +1,11 @@
 <?php
-class Template_class{
+
+class Template_class
+{
     var $author = "abc";
-    static function getLibs(){
+
+    static function getLibs()
+    {
         echo '<meta charset="UTF-8">
 	<!--js files-->
 	<script src="./libs/bootstrap3/js/jquery-3.2.1.min.js"></script>
@@ -14,32 +18,32 @@ class Template_class{
 
     static function getmenu()
     {
-        if(!isset($_SESSION['nick'])){
+        if (!isset($_SESSION["email"])) {
             echo '<li class="dropdown">
                 <a class="dropdown-toggle" data-toggle="dropdown" href="#">Profils<span class="caret"></span></a>
                 <ul class="dropdown-menu">
                     <li><a href="./registracija.php">Reģistrēties</a></li>  
                 </ul>
                 </li>';
-        }
-        else{
-            echo '<li><a href="./registracija.php">'.$_SESSION['username'].'</a></li>
+        } else {
+            echo '<li><a href="./registracija.php">' . $_SESSION['username'] . '</a></li>
              <li><form method="post"><button class="btn btn-primary" name="i">Iziet</button></form></li>';
-            if(isset($_POST['i'])){
+            if (isset($_POST['i'])) {
                 session_destroy();
                 header('location:index.php');
             }
-            if($_SESSION['role']==4){
+            if ($_SESSION['role'] == 4) {
                 echo '<li><a href="./Lietotaji.php">Lietotāji</a></li>';
             }
         }
     }
 
-    static function getNav(){
+    static function getNav()
+    {
         echo '<nav class="navbar navbar-inverse">
               <div class="container-fluid">
                 <div class="logo1">
-                  <img src="img/Logo.png" class="logo">
+                  <img src="img/Logo2.png" class="logo">
                 </div>
                 <div class="navbar-header">
                   <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -48,15 +52,15 @@ class Template_class{
                     <span class="icon-bar"></span> 
                   </button>
                 </div>
-                <div class="collapse navbar-collapse navbar-right" id="myNavbar">
-                  <ul class="nav navbar-nav text">
+              <div class="collapse navbar-collapse navbar-right" id="myNavbar">
+                  <ul class="nav navbar-nav">
                       <li><a href="index.php">Sākums</a></li>
                       <li><a href="galerija.php">Galerija</a></li>
                       <li><a href="pakalpojumi.php">Pakalpojumi</a></li>
                       <li><a href="kontakti.php">Kontakti</a></li>
-                       <li><a href="Lietotaji.php">Lietotaji</a></li>
+                       
                   </ul> 
-                   <form class="navbar-form navbar-left" action="/action_page.php">
+                   <form class="navbar-form navbar-left" action="#">
                        <div class="input-group">
                          <input type="text" class="form-control" placeholder="Meklēt">
                        <div class="input-group-btn">
@@ -65,23 +69,37 @@ class Template_class{
                        </button>
                        </div>
                        </div>
-                    </form>
-                 
-                 <form action="index.php" method="post" class="navbar-form navbar-right">
+                    </form> ';
+
+        if (isset($_POST['logout'])) {
+            session_destroy();
+            header('location:index.php');
+        }
+
+        if (!isset($_SESSION["email"])) {
+            echo    '<form <div class="regbut">
+                             <a href="./login.php">
+                <button type="button" class="btn btn-info btn-sm " >Pieslegties
+                </button>
+                
+                         <form class="regbut">
+                             <a href="./resetpas.php">
+                <button type="button" class="btn btn-info btn-sm ">Azmirsi paroli?
+                </button>
+               
                         <div class="regbut">
-                             <a href="./login.php">Pieslegties</a>
-                        </div>
-                         <div class="regbut">
-                             <a href="../resetpass.php">Azmirsi paroli?</a>
-                        </div>
-                        <div class="regbut">
-                             <a href="./registracija.php">Reģistrēties</a>
-                        </div>
-                       
-                        </form> 
-             
-              </div>
-            </nav>';
+                      
+                             <a href="./registracija.php">
+                     
+                <button type="button" class="btn btn-info btn-sm">Reģistrēties
+                </button> </a></div></form>
+               ';
+        } else {
+            echo ' <a class="navig" name="dd" >Sveiks:   ' . $_SESSION["email"] . '</a>
+                <form <li id="5"><a href="./profile.php">Mans profils </a></li></form>
+                         <form method="post"><button class="btn btn-primary btnien pog navig" name="logout">Iziet</button></form></li>';
+
+        }
+        echo "</nav>";
     }
-}
-?>
+           }

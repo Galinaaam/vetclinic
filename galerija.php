@@ -7,6 +7,7 @@
 </head>
 <body>
 <?php Template_class::getNav(); ?>
+
 <div class="container-fluid ">
     <div class="row"></div>
     <div class="col-md-12">

@@ -1,4 +1,7 @@
-<?php require_once ("./classes/autoload.php");?>
+<?php require_once ("./classes/autoload.php");
+
+//session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,7 +11,6 @@
 
 <body>
     <?php Template_class::getNav(); ?>
-
 <div class="container-fluid main-container">
     <div class="row">
         <div class="main">
@@ -34,6 +36,7 @@
 
         </div>
             <div class="col-sm-2"></div>
+
 </div>
 </div>
 

@@ -13,16 +13,23 @@
             <div  align="center">
                 <div class="col-sm-2"></div>
                 <div class="col-sm-8"> <h1>Paroles atjaunošana</h1>
-                    <form action="login.php" method="post">
+                    <form action="resetpas.php" method="post">
                         <div class="form-group auto">
                             <label for="5">Epasts:</label>
-                            <input id="5" type="email" class="form-control"   name="epasts" value="<?php echo @$_POST['epasts']; ?>">
-                        </div>
+                            <input id="5" type="email" class="form-control "   name="epasts" value="<?php echo @$_POST['epasts']; ?>">
+                            </div>
                         <div>
                             <button type="submit" class="btn btn-primary" name="sutit">Atjaunot</button>
                         </div>
-                    </form>
 
+                </form>
+                <?php
+                if(isset($_POST['sutit'])) {
+                    $validate->isEmpty($_POST['epasts'],"Lūdzu ierakstiet Epastu<br>");
 
+                }
+                ?>
+
+            </div>
 </body>
 </html>

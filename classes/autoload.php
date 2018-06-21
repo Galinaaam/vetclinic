@@ -5,3 +5,4 @@
     $temp = new Template_class();
     $db = new DB_class();
     $validate = new Validation_class();
+    session_start();

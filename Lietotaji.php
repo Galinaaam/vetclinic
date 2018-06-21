@@ -1,12 +1,19 @@
-<?php require_once ("./classes/autoload.php");?>
+<?php require_once ("./classes/autoload.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <title>Dogsvet</title>
     <?php Template_class::getLibs(); ?>
+    <script>
+        $(function () {
+            $("#6").attr("class","active");
+        });
+    </script>
 </head>
 <body>
 <?php Template_class::getNav(); ?>
+
 <div class="container-fluid main-container">
     <div class="row">
         <div class="main">
@@ -15,20 +22,18 @@
                <div class="col-sm-8"> <h1>Dogs VET </h1>
                    <div class="col-sm-2"></div>
                     <div class="navbar-header">
-                       <li><a href="Lietotaji.php">Lietotaji</a></li>
+                        <?php $db->getUsers()?>
+
+
                         <?php
-                      if(isset($_REQUEST['email']) == ""){
-                        $db->selectCategory();
-                       }
-                       elseif(isset($_REQUEST['email']) != "" && isset($_REQUEST['delete']) == ""){
-                        $db->editCategory($_POST['vards'],$_POST['uzvards'], $_POST['email']);
-                          $db->selectCategory();
-                      }
-                       else{
-                          $db->deleteCategory($_POST['cID']);
-                           $db->selectCategory();
-                       }
+                        if(@$_POST['email'] != ''){
+                            $db->editUsr($_POST['e'], $_POST['va'], $_POST['uz'], $_POST['te']);
+                        }
+                        if(isset($_POST['deleteUser'])){
+                            $db->deleteUsr($_POST['delUserID']);
+                        }
                         ?>
+
 
                 </div>
             </div>

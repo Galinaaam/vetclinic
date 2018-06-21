@@ -39,7 +39,7 @@ Vismaz 8 rakstzīmes, kurās ir vismaz viens skaitlis un rakstzīmes no augšēj
                         </div>
                         <div class="form-group">
                             <label for="8">Telefons:</label>
-                            <input id="8" type="tel"  title="Starptautiskais, valsts vai vietējais tālruņa numurs" class="form-control"  name="telefons" value="<?php echo @$_POST['telefons']; ?>">
+                            <input id="8" type="tel" pattern="(\+?\d[- .]*){7,13}" title="Starptautiskais, valsts vai vietējais tālruņa numurs" class="form-control"  name="telefons" value="<?php echo @$_POST['telefons']; ?>">
                         </div>
                         <div>
                             <button type="submit" class="btn btn-primary" name="sutit">Nosūtīt</button>
@@ -47,26 +47,18 @@ Vismaz 8 rakstzīmes, kurās ir vismaz viens skaitlis un rakstzīmes no augšēj
                     </form>
                     <?php
                     if(isset($_POST['sutit'])) {
-                        $validate->isEmpty($_POST['epasts'],"Lūdzu ierakstiet Epastu<br>");
-                        $validate->isEmpty($_POST['parole'],"Lūdzu ierakstiet paroli<br>");
-                        $validate->isEmpty($_POST['vards'],"Lūdzu ierakstiet vārdu<br>");
-                        $validate->isEmpty($_POST['uzvards'],"Lūdzu ierakstiet uzvārdu<br>");
-                        $validate->isEmpty($_POST['telefons'],"Lūdzu ierakstiet telefonu<br>");
+                        $validate->isEmptyAll($_POST['epasts'],$_POST['parole'],$_POST['vards'],$_POST['uzvards'],$_POST['telefons']);
 
                         if($validate->getErrorStatus ()==0){
-                           // $users = R::dispense('users');
-                          // $users->password = password_hash($_POST['password'],PASSWORD_DEFAULT);
+                            $db->saveform($_POST['epasts'],md5($_POST['parole']),$_POST['vards'],$_POST['uzvards'],$_POST['telefons']);
 
                             echo 'Dati saglabāti';
 
-                            $db->saveform($_POST['epasts'],md5($_POST['parole']),$_POST['vards'],$_POST['uzvards'],$_POST['telefons']);
                         }
 
-                        else{
-                            echo 'Lūdzu aizpildiet visus laukus!';
-                        }
+
                     }
-               //     pattern="(\+?\d[- .]*){7,13}"
+
                     ?>
             </div>
         </div>
