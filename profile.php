@@ -10,8 +10,8 @@ require_once ("./classes/autoload.php");
     <?php Template_class::getLibs();
     if(isset($_SESSION['role']) && $_SESSION['role']== "2"){
             header('location:Lietotaji.php');
-        }
-        ?>
+
+
 
     }
     if(!isset($_SESSION["email"])){
