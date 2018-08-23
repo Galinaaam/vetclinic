@@ -50,9 +50,9 @@
         }
         function getEditUsrForm($e){
 
-            $sql = "SELECT email, vards, uzvards, telefons FROM users WHERE email= {$e}";
+            $sql = "SELECT email, vards, uzvards, telefons FROM users WHERE email=$e";
             $rs=$this->con->query($sql);
-            while($row = $rs-> fetch_assoc ()) {
+            while($row = $rs->fetch_assoc()){
                 echo "
                     <div class='form-group'>
                         <label for='4'>E-pasts:</label>

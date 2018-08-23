@@ -43,7 +43,7 @@ class Template_class
         echo '<nav class="navbar navbar-inverse">
               <div class="container-fluid">
                 <div class="logo1">
-                  <img src="img/Logo2.png" class="logo">
+                  <img src="./loga.png" class="logo">
                 </div>
                 <div class="navbar-header">
                   <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
